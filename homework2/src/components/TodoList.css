@@ -1,0 +1,80 @@
+* {
+    font-family: "Segoe UI Semibold", sans-serif;
+    margin: 0 auto;
+}
+
+.app-container {
+    margin: 0 auto;
+}
+
+.todo-item {
+    border: 1px solid red;
+    border-radius: 20px;
+    width: 450px;
+    height: 140px;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    background: white;
+}
+
+.change {
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    background: red;
+}
+
+.del {
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    background: red;
+}
+
+.btn-block {
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
+.todo-input {
+    border-radius: 10px;
+    border: 1px solid red;
+    height: 35px;
+    width: 200px;
+}
+
+.todo-list {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.add {
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid red;
+}
+
+.todo-select {
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid red;
+}
+
+.filter-block {
+    margin-top: 20px;
+}
+
+.filter-select {
+    border-radius: 10px;
+    width: 100px;
+    height: 40px;
+    border: 1px solid red;
+}
+
+.block3 {
+    margin-top: 20px;
+}
