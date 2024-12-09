@@ -17,9 +17,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "../lesson1/node_modules/.bin/react-scripts build",
-    "test": "../lesson1/node_modules/.bin/react-scripts test",
-    "eject": "../lesson1/node_modules/.bin/react-scripts eject"
+    "build": "../homework3/node_modules/.bin/react-scripts build",
+    "test": "../homework3/node_modules/.bin/react-scripts test",
+    "eject": "../homework3/node_modules/.bin/react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
