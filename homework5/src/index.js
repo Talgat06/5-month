@@ -1,13 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import store from './redux/store';
-import BitcoinPrice from "./components/BitcoinPrice";
-import './App.css'
+import App from './App';
 
-ReactDOM.render(
-    <Provider store={store}>
-        <BitcoinPrice/>
-    </Provider>,
-    document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('root'));

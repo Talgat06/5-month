@@ -1,26 +1,34 @@
+import axios from 'axios';
+
 const initialState = {
-    data: [],
+    data: {},
     loading: false,
     error: null,
 };
 
-const bitcoinReducer = (state = initialState, action) => {
+const FETCH_BITCOIN_REQUEST = 'FETCH_BITCOIN_REQUEST';
+const FETCH_BITCOIN_SUCCESS = 'FETCH_BITCOIN_SUCCESS';
+const FETCH_BITCOIN_FAILURE = 'FETCH_BITCOIN_FAILURE';
+
+export default function bitcoinReducer(state = initialState, action) {
     switch (action.type) {
-        case 'FETCH_BITCOIN_DATA_SUCCESS':
-            return {
-                ...state,
-                data: action.payload,
-                loading: false,
-            };
-        case 'FETCH_BITCOIN_DATA_FAILURE':
-            return {
-                ...state,
-                error: action.payload,
-                loading: false,
-            };
+        case FETCH_BITCOIN_REQUEST:
+            return { ...state, loading: true, error: null };
+        case FETCH_BITCOIN_SUCCESS:
+            return { ...state, loading: false, data: action.payload };
+        case FETCH_BITCOIN_FAILURE:
+            return { ...state, loading: false, error: action.payload };
         default:
             return state;
     }
-};
+}
 
-export default bitcoinReducer;
+export const fetchBitcoin = () => async dispatch => {
+    dispatch({ type: FETCH_BITCOIN_REQUEST });
+    try {
+        const response = await axios.get('https://api.coindesk.com/v1/bpi/currentprice.json');
+        dispatch({ type: FETCH_BITCOIN_SUCCESS, payload: response.data.bpi });
+    } catch (error) {
+        dispatch({ type: FETCH_BITCOIN_FAILURE, payload: error.message });
+    }
+};

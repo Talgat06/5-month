@@ -37,52 +37,97 @@
     }
 }
 
+* {
+    font-family: "Franklin Gothic Book", sans-serif;
+}
+
 body {
-    text-align: center;
-    background-image: url('./components/bitcoin.webp');
-    background-size: cover, contain;
-    background-repeat: no-repeat;
-    font-family: "Franklin Gothic Medium Cond", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.dog {
+    width: 1000px;
+    height: 860px;
+}
+
+.dog-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.cat {
+    width: 1000px;
+    height: 860px;
+}
+
+.cat-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .bitcoin-block {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 100px;
-}
-
-.bitcoin-info {
-    position: relative;
     width: 250px;
     height: 250px;
-    border: 2px solid #ffe200;
-    list-style: none;
+    text-align: center;
+    background: rgba(136, 136, 136, 0.59);
+    border: 2px solid red;
     border-radius: 20px;
-    overflow: hidden;
 }
 
-.bitcoin-info::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('./components/bitcoin.webp');
-    background-size: cover;
-    filter: blur(6px);
-    z-index: -1;
+.moon-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-p {
-    color: grey;
+.input {
+    width: 250px;
+    height: 30px;
+    border: 2px solid transparent;
+    outline: none;
+    border-bottom: 2px solid #3f3f3f;
+    caret-color: #3f3f3f;
+    background-color: #212121;
+    padding: 5px;
+    transition: .5s linear;
+    font-family: monospace;
+    letter-spacing: 1px;
 }
 
-.text-content {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    padding: 10px;
+.input:focus {
+    border: 2px solid #fa4753;
+    caret-color: #fa4753;
+    color: #fa4753;
+    box-shadow: 4px 4px 10px #070707;
+}
+
+.input:focus::placeholder {
+    color: #fa4753;
+}
+
+.weatherInfo {
+    margin-top: 20px;
+}
+
+.city {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.temp {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
 }
